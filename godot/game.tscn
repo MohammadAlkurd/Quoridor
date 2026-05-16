@@ -1,0 +1,534 @@
+[gd_scene load_steps=30 format=3 uid="uid://cxyv78hk6gffe"]
+
+[ext_resource type="Script" path="res://src/main.cs" id="1_wsy3q"]
+[ext_resource type="Texture2D" uid="uid://mlu8wl7qba5a" path="res://assets/images/dark_piece.png" id="2_b5x3o"]
+[ext_resource type="ButtonGroup" uid="uid://ca8yp4pchxkg6" path="res://assets/button_group_light.tres" id="2_jf4vn"]
+[ext_resource type="Texture2D" uid="uid://dbc45cy413uf" path="res://assets/images/light_piece.png" id="3_vlgyb"]
+[ext_resource type="Texture2D" uid="uid://c852c814dqknp" path="res://assets/images/grid7x7.png" id="4_0e6du"]
+[ext_resource type="Shader" path="res://assets/grid.gdshader" id="4_qdo2s"]
+[ext_resource type="Script" path="res://src/wall.cs" id="5_jn16o"]
+[ext_resource type="Script" path="res://src/Player.cs" id="6_qgckh"]
+[ext_resource type="ButtonGroup" uid="uid://dx61dakbg2lsc" path="res://assets/button_group_dark.tres" id="6_vy88u"]
+[ext_resource type="Theme" uid="uid://bupp5fvb2hil" path="res://assets/button.tres" id="9_lxin5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mb5a7"]
+bg_color = Color(0.992172, 0.6551, 0.333165, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p83w"]
+bg_color = Color(0.760784, 0.447059, 0.0901961, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6, 0.34902, 0.0431373, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7buq5"]
+draw_center = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wnwe5"]
+shader = ExtResource("4_qdo2s")
+shader_parameter/a = 25.9
+shader_parameter/b = 1.0
+shader_parameter/c = 64.0
+shader_parameter/d = 5.7
+shader_parameter/e = 0.65
+shader_parameter/f = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35t4t"]
+bg_color = Color(0.760784, 0.447059, 0.0901961, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6, 0.34902, 0.0431373, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+anti_aliasing = false
+anti_aliasing_size = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck0v2"]
+draw_center = false
+anti_aliasing = false
+anti_aliasing_size = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0r1oh"]
+bg_color = Color(0.761105, 0.446983, 0.0898756, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.599893, 0.348791, 0.0429847, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(1, 0, 0.00784314, 1)
+shadow_size = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3opi"]
+bg_color = Color(0.760784, 0.447059, 0.0901961, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6, 0.34902, 0.0431373, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(0.411765, 0.792157, 0, 1)
+anti_aliasing = false
+anti_aliasing_size = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c71iq"]
+bg_color = Color(0.964706, 0.611765, 0.262745, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.823529, 0.490196, 0.0941176, 1)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(1, 0, 0, 1)
+shadow_size = 20
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_klr54"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_35t4t")
+Button/styles/focus = SubResource("StyleBoxFlat_ck0v2")
+Button/styles/hover = SubResource("StyleBoxFlat_0r1oh")
+Button/styles/normal = SubResource("StyleBoxFlat_x3opi")
+Button/styles/pressed = SubResource("StyleBoxFlat_c71iq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7kxh"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxs83"]
+draw_center = false
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+shadow_color = Color(1, 0, 0, 1)
+shadow_size = 500
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxqve"]
+draw_center = false
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+shadow_color = Color(0.411765, 0.792157, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_rthd2"]
+Button/colors/icon_disabled_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_u7kxh")
+Button/styles/focus = SubResource("StyleBoxFlat_u7kxh")
+Button/styles/hover = SubResource("StyleBoxFlat_gxs83")
+Button/styles/normal = SubResource("StyleBoxFlat_sxqve")
+Button/styles/pressed = SubResource("StyleBoxFlat_gxs83")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j8h1"]
+draw_center = false
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+shadow_color = Color(0.411765, 0.792157, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_s0p7o"]
+Button/styles/disabled = SubResource("StyleBoxFlat_u7kxh")
+Button/styles/focus = SubResource("StyleBoxFlat_u7kxh")
+Button/styles/hover = SubResource("StyleBoxFlat_gxs83")
+Button/styles/normal = SubResource("StyleBoxFlat_0j8h1")
+Button/styles/pressed = SubResource("StyleBoxFlat_gxs83")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7qcx"]
+bg_color = Color(0.6, 0.6, 0.6, 0.368627)
+
+[sub_resource type="Theme" id="Theme_hvrpn"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_35t4t")
+Button/styles/focus = SubResource("StyleBoxFlat_ck0v2")
+Button/styles/hover = SubResource("StyleBoxFlat_0r1oh")
+Button/styles/normal = SubResource("StyleBoxFlat_x3opi")
+Button/styles/pressed = SubResource("StyleBoxFlat_c71iq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jqef"]
+bg_color = Color(0.992157, 0.654902, 0.333333, 0)
+border_width_top = 25
+border_width_bottom = 25
+border_color = Color(0.368338, 0.180255, 0, 1)
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("Restartbutton", "Restartbutton2", "WinningScreen", "light_walls", "dark_walls", "light_player", "dark_player")]
+script = ExtResource("1_wsy3q")
+Restartbutton = NodePath("Button")
+Restartbutton2 = NodePath("Game/RichTextLabel/Button")
+WinningScreen = NodePath("Game/RichTextLabel")
+group_light = ExtResource("2_jf4vn")
+group_dark = ExtResource("6_vy88u")
+light_walls = NodePath("Game/Light_walls")
+dark_walls = NodePath("Game/Dark_walls")
+light_player = NodePath("Game/LightPiece")
+dark_player = NodePath("Game/DarkPiece")
+grid_start = Vector2(0, 211)
+initial_pos = Vector2(201, 140)
+initial_pos_rotated = Vector2(140, 219)
+initial_pos_player = Vector2(8, 239)
+
+[node name="background" type="Panel" parent="."]
+offset_right = 540.0
+offset_bottom = 960.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mb5a7")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 60.0
+offset_top = 30.0
+offset_right = 127.0
+offset_bottom = 63.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1p83w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1p83w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1p83w")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7buq5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7buq5")
+text = "Restart"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(270, 480)
+
+[node name="Game" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 71.0
+offset_right = 660.0
+offset_bottom = 891.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Game/HBoxContainer"]
+show_behind_parent = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_wnwe5")
+layout_mode = 2
+texture = ExtResource("4_0e6du")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Dark_walls" type="Node2D" parent="Game"]
+position = Vector2(-140, 91)
+
+[node name="wall1" type="Button" parent="Game/Dark_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 201.0
+offset_right = 219.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme = SubResource("Theme_klr54")
+disabled = true
+toggle_mode = true
+button_group = ExtResource("6_vy88u")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall2" type="Button" parent="Game/Dark_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 281.0
+offset_right = 299.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme = SubResource("Theme_klr54")
+disabled = true
+toggle_mode = true
+button_group = ExtResource("6_vy88u")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall3" type="Button" parent="Game/Dark_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 361.0
+offset_right = 379.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme = SubResource("Theme_klr54")
+disabled = true
+toggle_mode = true
+button_group = ExtResource("6_vy88u")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall4" type="Button" parent="Game/Dark_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 441.0
+offset_right = 459.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme = SubResource("Theme_klr54")
+disabled = true
+toggle_mode = true
+button_group = ExtResource("6_vy88u")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall5" type="Button" parent="Game/Dark_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 521.0
+offset_right = 539.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme = SubResource("Theme_klr54")
+disabled = true
+toggle_mode = true
+button_group = ExtResource("6_vy88u")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall6" type="Button" parent="Game/Dark_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 601.0
+offset_right = 619.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme = SubResource("Theme_klr54")
+disabled = true
+toggle_mode = true
+button_group = ExtResource("6_vy88u")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="Light_walls" type="Node2D" parent="Game"]
+position = Vector2(-140, 91)
+
+[node name="wall1" type="Button" parent="Game/Light_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 201.0
+offset_top = 680.0
+offset_right = 219.0
+offset_bottom = 820.0
+grow_horizontal = 2
+theme = ExtResource("9_lxin5")
+toggle_mode = true
+button_group = ExtResource("2_jf4vn")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall2" type="Button" parent="Game/Light_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 281.0
+offset_top = 680.0
+offset_right = 299.0
+offset_bottom = 820.0
+grow_horizontal = 2
+theme = ExtResource("9_lxin5")
+toggle_mode = true
+button_group = ExtResource("2_jf4vn")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall3" type="Button" parent="Game/Light_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 361.0
+offset_top = 680.0
+offset_right = 379.0
+offset_bottom = 820.0
+grow_horizontal = 2
+theme = ExtResource("9_lxin5")
+toggle_mode = true
+button_group = ExtResource("2_jf4vn")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall4" type="Button" parent="Game/Light_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 441.0
+offset_top = 680.0
+offset_right = 459.0
+offset_bottom = 820.0
+grow_horizontal = 2
+theme = ExtResource("9_lxin5")
+toggle_mode = true
+button_group = ExtResource("2_jf4vn")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall5" type="Button" parent="Game/Light_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 521.0
+offset_top = 680.0
+offset_right = 539.0
+offset_bottom = 820.0
+grow_horizontal = 2
+theme = ExtResource("9_lxin5")
+toggle_mode = true
+button_group = ExtResource("2_jf4vn")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="wall6" type="Button" parent="Game/Light_walls" node_paths=PackedStringArray("main")]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 601.0
+offset_top = 680.0
+offset_right = 619.0
+offset_bottom = 820.0
+grow_horizontal = 2
+theme = ExtResource("9_lxin5")
+toggle_mode = true
+button_group = ExtResource("2_jf4vn")
+script = ExtResource("5_jn16o")
+movementconst = Vector2(80, 80)
+main = NodePath("../../..")
+
+[node name="DarkPiece" type="Button" parent="Game" node_paths=PackedStringArray("main")]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 239.0
+offset_right = 1138.0
+offset_bottom = 1129.0
+scale = Vector2(0.05, 0.05)
+theme = SubResource("Theme_rthd2")
+disabled = true
+toggle_mode = true
+button_group = ExtResource("6_vy88u")
+icon = ExtResource("2_b5x3o")
+icon_alignment = 1
+script = ExtResource("6_qgckh")
+movementconst = Vector2(80, 80)
+main = NodePath("../..")
+
+[node name="LightPiece" type="Button" parent="Game" node_paths=PackedStringArray("main")]
+texture_repeat = 1
+layout_mode = 0
+offset_left = 248.0
+offset_top = 719.0
+offset_right = 1138.0
+offset_bottom = 1609.0
+scale = Vector2(0.05, 0.05)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_s0p7o")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+toggle_mode = true
+button_group = ExtResource("2_jf4vn")
+icon = ExtResource("3_vlgyb")
+icon_alignment = 1
+script = ExtResource("6_qgckh")
+movementconst = Vector2(80, 80)
+main = NodePath("../..")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Game"]
+visible = false
+top_level = true
+layout_mode = 0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 561.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_f7qcx")
+bbcode_enabled = true
+text = "[center]BLACK WON"
+fit_content = true
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Button" type="Button" parent="Game/RichTextLabel"]
+top_level = true
+layout_mode = 0
+offset_left = 221.0
+offset_top = 445.0
+offset_right = 288.0
+offset_bottom = 478.0
+scale = Vector2(2, 2)
+theme = SubResource("Theme_hvrpn")
+text = "Restart"
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 540.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8jqef")

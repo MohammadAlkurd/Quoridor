@@ -1,0 +1,15 @@
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/backend
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/backend.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/backend.deps.json
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/backend.runtimeconfig.json
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/backend.pdb
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.Configuration.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.Configuration.Binder.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.Configuration.FileExtensions.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.Configuration.Json.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.FileProviders.Abstractions.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.FileProviders.Physical.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.FileSystemGlobbing.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Microsoft.Extensions.Primitives.dll
+/home/mohammad/Quoridor/backend/bin/Debug/net7.0/publish/Newtonsoft.Json.dll

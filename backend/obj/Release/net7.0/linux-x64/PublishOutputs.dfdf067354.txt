@@ -1,0 +1,2 @@
+/home/mohammad/Quoridor/backend/bin/Release/net7.0/linux-x64/publish/backend.pdb
+/home/mohammad/Quoridor/backend/bin/Release/net7.0/linux-x64/publish/backend
