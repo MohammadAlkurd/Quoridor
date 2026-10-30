@@ -1,6 +1,6 @@
 # Quoridor
 
-A networked implementation of the board game **Quoridor** — a Godot client (C#) with a dedicated .NET game server for online matches, plus an offline mode.
+A networked implementation of the board game **Quoridor** — a Godot client (C#) with a dedicated .NET game server for online matches, plus an offline mode. Written entirely by hand.
 
 ## About the game
 
