@@ -13,7 +13,7 @@ Quoridor is an abstract strategy game for two players. Each turn you either move
 
 ## Tech
 
-Godot 4, C#, GDScript
+Godot 4, C#
 
 ## Running
 
